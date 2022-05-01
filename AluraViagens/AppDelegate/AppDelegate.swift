@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  AluraViagens
 //
-//  Created by Lucas Lacerda on 09/04/22.
+//  Created by Ândriu Felipe Coelho on 13/03/21.
 //
 
 import UIKit

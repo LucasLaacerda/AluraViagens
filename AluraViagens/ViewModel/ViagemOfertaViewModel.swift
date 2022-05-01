@@ -2,12 +2,13 @@
 //  ViagemOfertaViewModel.swift
 //  AluraViagens
 //
-//  Created by Lucas Lacerda on 15/04/22.
+//  Created by Ândriu Felipe Coelho on 23/08/21.
 //
 
 import Foundation
 
 class ViagemOfertaViewModel: ViagemViewModel {
+    
     var tituloSessao: String {
         return "Ofertas"
     }
@@ -22,11 +23,9 @@ class ViagemOfertaViewModel: ViagemViewModel {
         return 1
     }
     
-    
     // MARK: - Inicializador
     
     init(_ viagens: [Viagem]) {
         self.viagens = viagens
     }
-    
 }

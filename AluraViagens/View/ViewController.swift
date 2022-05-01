@@ -46,7 +46,7 @@ extension ViewController: UITableViewDataSource {
                 fatalError("error to create ViagemTableViewCell")
             }
             
-            celulaViagem.configuraCell(viewModel?.viagens[indexPath.row])
+            celulaViagem.configuraCelula(viewModel?.viagens[indexPath.row])
             return celulaViagem
             
         case .ofertas:
@@ -55,7 +55,7 @@ extension ViewController: UITableViewDataSource {
                 fatalError("error to create OfertaTableViewCell")
             }
             
-            celulaOferta.configuraCell(viewModel?.viagens)
+            celulaOferta.configuraCelula(viewModel?.viagens)
             
             return celulaOferta
             

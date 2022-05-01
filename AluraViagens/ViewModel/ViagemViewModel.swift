@@ -2,19 +2,18 @@
 //  ViagemViewModel.swift
 //  AluraViagens
 //
-//  Created by Lucas Lacerda on 10/04/22.
+//  Created by Ândriu Felipe Coelho on 30/05/21.
 //
 
 import Foundation
 
-enum ViagemViewModelType: String{
+enum ViagemViewModelType: String {
     case destaques
     case ofertas
     case internacionais
 }
 
-
-protocol ViagemViewModel{
+protocol ViagemViewModel {
     var tituloSessao: String { get }
     var tipo: ViagemViewModelType { get }
     var viagens: [Viagem] { get set }

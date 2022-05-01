@@ -2,12 +2,13 @@
 //  ViagemDestaqueViewModel.swift
 //  AluraViagens
 //
-//  Created by Lucas Lacerda on 10/04/22.
+//  Created by Ândriu Felipe Coelho on 30/05/21.
 //
 
 import Foundation
 
 class ViagemDestaqueViewModel: ViagemViewModel {
+    
     var tituloSessao: String {
         return "Destaques"
     }
@@ -22,9 +23,7 @@ class ViagemDestaqueViewModel: ViagemViewModel {
         return viagens.count
     }
     
-    
     init(_ viagens: [Viagem]) {
         self.viagens = viagens
     }
-    
 }

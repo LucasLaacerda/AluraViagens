@@ -23,6 +23,14 @@ class ViewController: UIViewController {
         viagensTableView.dataSource = self
         viagensTableView.delegate = self
     }
+    
+    func irParaDetalhe(_ viagem: Viagem?){
+        if let viagemSelecionada = viagem {
+            let detalheController = DetalheViewController.intanciar(viagemSelecionada)
+            navigationController?.pushViewController(detalheController, animated: true)
+        }
+       
+    }
 }
 
 extension ViewController: UITableViewDataSource {
@@ -55,6 +63,7 @@ extension ViewController: UITableViewDataSource {
                 fatalError("error to create OfertaTableViewCell")
             }
             
+            celulaOferta.delegate = self
             celulaOferta.configuraCelula(viewModel?.viagens)
             
             return celulaOferta
@@ -89,5 +98,28 @@ extension ViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.phone ? 400 : 475
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let viewModel = secaoDeViagens?[indexPath.section]
+        
+        switch viewModel?.tipo{
+        case .destaques, .internacionais:
+            guard let viagemSelecionada = viewModel?.viagens[indexPath.row] else { return }
+            irParaDetalhe(viagemSelecionada)
+        default:
+            break
+        }
+        
+        
+        
+    }
+}
+
+
+extension ViewController: OfertaTableViewCellDelegate {
+    func didSelectView(_ viagem: Viagem?) {
+        irParaDetalhe(viagem)
     }
 }
